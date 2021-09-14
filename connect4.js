@@ -155,3 +155,7 @@ function checkForWin() {
 
 makeBoard();
 makeHtmlBoard();
+
+function testTest(x, y) {
+  return x + y;
+}
