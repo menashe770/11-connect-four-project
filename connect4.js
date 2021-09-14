@@ -71,7 +71,7 @@ function endGame(msg) {
 
 // handleClick: handle click of column top to play piece
 function handleClick(evt) {
-  
+
   // get x from ID of clicked cell
   const x = +evt.target.id;
 
@@ -87,12 +87,12 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin()) {
-    return endGame(`Player ${currPlayer} won!`);
+    return endGame(`Player ${currPlayer} wins \n Reload page to play again`);
   }
 
   // check for tie
   if (board.every((row) => row.every((cell) => cell))) {
-    return endGame('Tie!');
+    return endGame(`It's a tie \n Reload page to play again`);
   }
 
   // switch players
@@ -109,7 +109,6 @@ function checkForWin() {
     // Check four cells to see if they're all color of current player
     //  - cells: list of four (y, x) cells
     //  - returns true if all are legal coordinates & all match currPlayer
-
     return cells.every(
       ([y, x]) =>
         y >= 0 &&
